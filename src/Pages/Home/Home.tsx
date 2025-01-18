@@ -8,17 +8,10 @@ const Home: React.FC = () => {
       <section className={styles.presentationContainer}>
         <div className={styles.presentation}>
           <div className={styles.text}>
-            <h1>Franco Spada</h1>
+            <h1>Hello there, I'm Franco.</h1>
             <p>
-              Hello there! I'm Franco, a passionate and creative professional
-              with a background in journalism, customer support, and content
-              creation. As a journalist from Universidad de La Matanza, I've
-              sharpened my writing skills and developed a keen eye for detail,
-              making sure my work is always both passionate and high-quality.
-              When I'm not at work, you can find me hosting and producing my
-              podcast, or experimenting with copywriting video and audio
-              editing, and social media management. I'm always looking to take
-              on new projects and help you achieve your goals.
+              I help creators and brands grow their business through the power
+              of social media. Let’s make something amazing together.
             </p>
             <button type="button" className={styles.button}>
               Work with me
@@ -30,7 +23,6 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Sección de proyectos */}
       <section className={styles.projects}>
         <h2>Mis Proyectos</h2>
         <div className={styles.cards}>
@@ -49,7 +41,6 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Sección de contacto */}
       <section className={styles.contact}>
         <h2>Contacto</h2>
         <p>Si queres contactarme, no dudes en escribirme:</p>

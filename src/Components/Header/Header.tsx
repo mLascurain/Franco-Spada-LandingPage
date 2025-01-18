@@ -5,7 +5,9 @@ const Header: React.FC = () => {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
-        FRANCO <span>SPADA</span>
+        <a href="/">
+          FRANCO <span>SPADA</span>
+        </a>
       </div>
       <nav className={styles.nav}>
         <ul className={styles.navList}>

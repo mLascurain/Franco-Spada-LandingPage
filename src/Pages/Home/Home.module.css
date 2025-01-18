@@ -34,9 +34,17 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  text-align: justify;
-  font-size: 1.2rem;
-  line-height: 1.8rem;
+  font-size: 2.8rem;
+  line-height: 2.8rem;
+}
+
+.presentation .text h1 {
+  font-size: 3.2rem;
+  margin-bottom: 0.2rem;
+}
+
+.presentation .button {
+  font-size: 1.6rem;
 }
 
 .presentation .image img {
