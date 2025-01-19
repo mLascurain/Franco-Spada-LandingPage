@@ -477,6 +477,9 @@
 }
 
 @media (max-width: 768px) {
+  html {
+    scroll-snap-type: y none;
+  }
   .presentation {
     flex-direction: column;
     align-items: center;
