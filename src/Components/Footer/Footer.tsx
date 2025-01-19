@@ -6,19 +6,18 @@ const Footer: React.FC = () => {
     <footer className={styles.footer}>
       <div className={styles.container}>
         <p className={styles.text}>
-          &copy; {new Date().getFullYear()} Franco Spada. Todos los derechos
-          reservados.
+          &copy; {new Date().getFullYear()} Franco Spada. All rights reserved.
         </p>
         <nav className={styles.nav}>
           <ul className={styles.navList}>
             <li className={styles.navItem}>
               <a href="/privacy" className={styles.navLink}>
-                Política de Privacidad
+                Privacy Policy
               </a>
             </li>
             <li className={styles.navItem}>
               <a href="/terms" className={styles.navLink}>
-                Términos y Condiciones
+                Terms and Conditions
               </a>
             </li>
           </ul>

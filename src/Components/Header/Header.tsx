@@ -12,23 +12,23 @@ const Header: React.FC = () => {
       <nav className={styles.nav}>
         <ul className={styles.navList}>
           <li className={styles.navItem}>
-            <a href="/" className={styles.navLink}>
+            <a href="#home" className={styles.navLink}>
               Home
             </a>
           </li>
           <li className={styles.navItem}>
-            <a href="/about" className={styles.navLink}>
-              About
+            <a href="#services" className={styles.navLink}>
+              Services
             </a>
           </li>
           <li className={styles.navItem}>
-            <a href="/services" className={styles.navLink}>
-              Servicios
+            <a href="#reviews" className={styles.navLink}>
+              Reviews
             </a>
           </li>
           <li className={styles.navItem}>
-            <a href="/contact" className={styles.navLink}>
-              Contacto
+            <a href="#contact" className={styles.navLink}>
+              Contact
             </a>
           </li>
         </ul>
