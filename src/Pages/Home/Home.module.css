@@ -19,6 +19,11 @@
   width: 100%;
 }
 
+.presentation a {
+  text-decoration: none;
+  width: fit-content;
+}
+
 .presentationContainer {
   display: flex;
   align-items: center;
@@ -38,6 +43,10 @@
   gap: 1rem;
   font-size: 2.8rem;
   line-height: 2.8rem;
+}
+
+.presentation .text p {
+  margin-bottom: 2rem;
 }
 
 .presentation .text h1 {
@@ -81,29 +90,60 @@
   scroll-snap-align: start;
 }
 
+.projects h3 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.card p {
+  padding-bottom: 1rem;
+  max-width: 75%;
+  border-bottom: 2px solid #e4e4e4;
+}
+
 .projects .cards {
   display: flex;
   gap: 2rem;
   justify-content: center;
   margin-top: 1rem;
+  margin-bottom: 2rem;
   flex-wrap: wrap;
 }
 
 .projects .card {
   background-color: #f8f8f8;
   padding: 1rem;
-  border: 2px solid #2b2b2b;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(80, 80, 80, 0.1);
+  border: 2px solid #e4e4e4;
   flex: 1;
+  box-shadow: 0 2px 8px rgba(80, 80, 80, 0.1);
   max-width: 300px;
-  height: 500px;
+  height: 550px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
   gap: 1rem;
+}
+
+.card div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.card img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: rgba(71, 71, 71, 0.705) 0px 2px 8px;
+  border: 2px solid #e4e4e4;
+  transition: all 0.3s ease;
+  border-radius: 50%;
 }
 
 .card:hover {
@@ -129,7 +169,6 @@
   transition: all 0.3s ease;
   width: 15vw;
   height: 60px;
-  margin-top: 2rem;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -194,6 +233,7 @@
   border-radius: 4px;
   width: 45vw;
   transition: all 0.3s ease;
+  margin-bottom: 1rem;
 }
 
 .contact input:hover,
@@ -269,6 +309,16 @@
 
 .navButton:hover {
   transform: scale(1.1);
+}
+
+.status {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: green;
+}
+
+.status.error {
+  color: red;
 }
 
 @keyframes fadeOutLeft {

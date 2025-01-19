@@ -2,8 +2,12 @@ import React, { useState } from "react";
 import styles from "./Home.module.css";
 import presentacion from "../../assets/franco.jpeg";
 import reviewImage from "../../assets/franco.jpeg";
-import service from "../../assets/service.jpeg";
+import serviceSocialMedia from "../../assets/social-media-marketing-concept-.jpg";
+import serviceContentCreator from "../../assets/content.jpg";
+import serviceConsulting from "../../assets/consulta-financiera-isometrica-o-concepto-analisis-redes-sociales-comunicacion-consultoria-empresarial_589019-4599.jpg";
 import { useEffect } from "react";
+import emailjs from "@emailjs/browser";
+import { useRef } from "react";
 
 const Home: React.FC = () => {
   const reviews = [
@@ -11,24 +15,23 @@ const Home: React.FC = () => {
       name: "María Gómez",
       comment: "¡Excelente experiencia! Franco es un profesional increíble.",
       image: reviewImage,
-      service: "Social media creator",
     },
     {
       name: "Juan Pérez",
       comment: "El trabajo de Franco superó nuestras expectativas.",
       image: reviewImage,
-      service: "Content Creator",
     },
     {
       name: "Lucía López",
       comment: "Recomiendo a Franco 100%. Muy talentoso y dedicado.",
       image: reviewImage,
-      service: "CM",
     },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [animation, setAnimation] = useState("");
+  const [status, setStatus] = useState<string | null>(null);
+  const form = useRef<HTMLFormElement>(null);
 
   const handleNext = () => {
     setAnimation(styles.fadeOutLeft);
@@ -59,6 +62,41 @@ const Home: React.FC = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const sendEmail = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!form.current) {
+      setStatus("Form reference is not valid.");
+      return;
+    }
+
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      console.error("EmailJS environment variables are missing.");
+      setStatus("An error occurred. Please try again later.");
+      return;
+    }
+
+    emailjs.sendForm(serviceId, templateId, form.current, publicKey).then(
+      (result) => {
+        console.log("Email sent successfully:", result.text);
+        setStatus("Message sent successfully!");
+        if (form.current) {
+          form.current.reset();
+        }
+      },
+      (error) => {
+        console.error("Error sending email:", error.text || error);
+        setStatus(
+          "An error occurred while sending the email. Please try again."
+        );
+      }
+    );
+  };
+
   return (
     <div className={styles.home}>
       <section id="home" className={styles.presentationContainer}>
@@ -72,9 +110,11 @@ const Home: React.FC = () => {
               I help creators and brands grow their business through the power
               of social media. Let’s make something amazing together.
             </p>
-            <button type="button" className={styles.button}>
-              Work with me
-            </button>
+            <a href="#services">
+              <button type="button" className={styles.button}>
+                Work with me
+              </button>
+            </a>
           </div>
         </div>
       </section>
@@ -83,29 +123,54 @@ const Home: React.FC = () => {
         <h2>My Services</h2>
         <div className={styles.cards}>
           <div className={styles.card}>
-            <img src={service} alt="Proyecto 1" className={styles.cardImage} />
-            <h3>Content Creator</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <a href="/">Learn More</a>
-          </div>
-          <div className={styles.card}>
-            <img src={service} alt="Proyecto 2" className={styles.cardImage} />
-            <h3>CM</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <a href="/">Learn More</a>
+            <div>
+              <h3>Consulting Services</h3>
+              <img
+                src={serviceConsulting}
+                alt="Proyecto 1"
+                className={styles.cardImage}
+              />
+              <p>
+                I help brands and creators design authentic, organic social
+                media marketing strategies to grow their audience and build
+                meaningful engagement.
+              </p>
+            </div>
           </div>
           <div className={styles.card}>
             <div>
-              <img src={service} alt="Service 3" className={styles.cardImage} />
-              <h3>Social media creator</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <h3>Social Media Management</h3>
+              <img
+                src={serviceSocialMedia}
+                alt="Proyecto 2"
+                className={styles.cardImage}
+              />
+              <p>
+                With years of experience in video content and podcast
+                production, I create engaging content tailored to your brand’s
+                voice and goals.
+              </p>
             </div>
-            <a href="/">Learn More</a>
+          </div>
+          <div className={styles.card}>
+            <div>
+              <h3>Content Creation</h3>
+              <img
+                src={serviceContentCreator}
+                alt="Service 3"
+                className={styles.cardImage}
+              />
+              <p>
+                I manage and organize your social media presence with content
+                scheduling, posting, and analytics to ensure consistent and
+                effective growth
+              </p>
+            </div>
           </div>
         </div>
-        <a href="https://calendly.com/" target="_blank">
+        <a href="https://calendly.com/franlspada" target="_blank">
           <button type="button" className={styles.button}>
-            Book a meeting
+            Book a Free Meeting
           </button>
         </a>
       </section>
@@ -117,9 +182,6 @@ const Home: React.FC = () => {
             &#8249;
           </button>
           <div className={`${styles.review} ${animation}`}>
-            <h4 className={styles.service}>
-              {"Service: " + reviews[currentIndex].service}
-            </h4>
             <img
               src={reviews[currentIndex].image}
               alt={"Foto de " + reviews[currentIndex].name}
@@ -146,11 +208,17 @@ const Home: React.FC = () => {
       <section id="contact" className={styles.contact}>
         <h2>Contact Me!</h2>
         <p>If you have any questions, feel free to write me:</p>
-        <form>
+        <form ref={form} onSubmit={sendEmail}>
           <div>
-            <input type="text" placeholder="Name" required />
-            <input type="email" placeholder="Email" required />
+            <input type="text" name="user_name" placeholder="Name" required />
+            <input
+              type="email"
+              name="user_email"
+              placeholder="Email"
+              required
+            />
             <textarea
+              name="message"
               placeholder="Your message"
               rows={5}
               required
@@ -161,6 +229,7 @@ const Home: React.FC = () => {
             </button>
           </div>
         </form>
+        {status && <p className={styles.status}>{status}</p>}
       </section>
     </div>
   );
