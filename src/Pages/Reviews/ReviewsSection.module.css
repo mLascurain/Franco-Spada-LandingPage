@@ -1,0 +1,246 @@
+.button {
+  background-color: transparent;
+  color: #2b2b2b;
+  outline: 2px solid #2b2b2b;
+  border: none;
+  font-size: large;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 15vw;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding: 1rem 2rem;
+  min-width: 180px;
+}
+
+.button:hover {
+  background-color: #191919;
+  color: white;
+  transform: scale(0.98);
+}
+
+.reviews {
+  padding: 2rem 0;
+  background-color: #f8f8f8;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  height: 100vh;
+  scroll-snap-align: start;
+}
+
+.reviews h2 {
+  font-size: 2.3rem;
+  margin-bottom: 1rem;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  position: relative;
+  width: 80vw;
+  overflow-x: hidden;
+}
+
+.review {
+  width: 60vw;
+  background-color: #f8f8f8;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s, opacity 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.review h4 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #2b2b2b;
+  font-weight: lighter;
+}
+
+.review p {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.navButton {
+  background: none;
+  border: none;
+  font-size: 4rem;
+  margin: 0 1.5rem;
+  cursor: pointer;
+  color: #2b2b2b;
+  transition: transform 0.2s ease;
+}
+
+.navButton:hover {
+  transform: scale(1.1);
+}
+
+.status {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: green;
+}
+
+.status.error {
+  color: red;
+}
+
+@keyframes fadeOutLeft {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-45%);
+  }
+}
+
+@keyframes fadeOutRight {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(45vw);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-45vw);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(0vw);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fadeOutLeft {
+  animation: fadeOutLeft 0.3s forwards;
+}
+
+.fadeOutRight {
+  animation: fadeOutRight 0.3s forwards;
+}
+
+.fadeInLeft {
+  animation: fadeInLeft 0.3s forwards;
+}
+
+.fadeInRight {
+  animation: fadeInRight 0.3s forwards;
+}
+
+.reviewImage {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.reviewImage:hover {
+  transform: translateY(-3px);
+}
+
+.cardImage {
+  width: auto;
+  height: 250px;
+  border-radius: 2%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.arrowsResponsive {
+  display: none;
+}
+
+.navButtonRes {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  html {
+    scroll-snap-type: y none;
+  }
+  .navButton {
+    display: none;
+  }
+  .reviews {
+    height: auto;
+    min-height: 100vh;
+  }
+  .carousel {
+    flex-direction: column;
+    height: auto;
+  }
+  .arrowsResponsove {
+    display: flex; /* Coloca los botones en una fila */
+    justify-content: center; /* Centra los botones horizontalmente */
+    align-items: center; /* Alinea verticalmente los botones */
+    gap: 10px; /* Espaciado entre los botones */
+  }
+
+  .navButtonRes {
+    flex: 0 1 auto; /* Asegura que los botones no se expandan más de lo necesario */
+    padding: 8px 16px; /* Ajusta el padding si es necesario */
+    font-size: 1rem; /* Ajusta el tamaño de fuente si quieres */
+    background: none;
+    border: none;
+    font-size: 4rem;
+    margin: 0 1.5rem;
+    cursor: pointer;
+    color: #2b2b2b;
+    transition: transform 0.2s ease;
+    display: flex;
+  }
+}
+
+@media screen and (max-height: 810px) {
+  .reviews h2 {
+    font-size: 1.6rem;
+  }
+  .reviews h3 {
+    font-size: 1.2rem;
+  }
+  .reviews p {
+    font-size: 1.1rem;
+  }
+  .reviewImage {
+    height: 50px;
+    width: 50px;
+  }
+}

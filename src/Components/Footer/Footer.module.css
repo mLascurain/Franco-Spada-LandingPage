@@ -60,3 +60,45 @@
 .icon:hover {
   transform: scale(1.1);
 }
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  .navList {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+}
+
+@media screen and (max-height: 810px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .container p {
+    font-size: small;
+  }
+  .nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  .navList {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .navItem {
+    font-size: small;
+  }
+  .footer {
+    padding: 0.5rem 1rem;
+    font-size: small;
+  }
+}
