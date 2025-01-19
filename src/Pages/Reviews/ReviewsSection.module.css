@@ -194,7 +194,7 @@
 
 @media (max-width: 768px) {
   html {
-    scroll-snap-type: y none;
+    scroll-snap-type: y proximity;
   }
   .navButton {
     display: none;
