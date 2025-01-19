@@ -17,11 +17,16 @@
 .logo {
   font-size: 1.5rem;
   font-weight: lighter;
+  transition: transform 0.3s ease;
 }
 
 .logo a {
   text-decoration: none;
   color: #2b2b2b;
+}
+
+.logo:hover {
+  transform: translateY(-3px);
 }
 
 .logo span {

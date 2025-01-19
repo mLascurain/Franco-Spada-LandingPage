@@ -84,24 +84,20 @@ const Home: React.FC = () => {
         <div className={styles.cards}>
           <div className={styles.card}>
             <img src={service} alt="Proyecto 1" className={styles.cardImage} />
-            <h3>Service 1</h3>
+            <h3>Content Creator</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             <a href="/">Learn More</a>
           </div>
           <div className={styles.card}>
             <img src={service} alt="Proyecto 2" className={styles.cardImage} />
-            <h3>Service 2</h3>
+            <h3>CM</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             <a href="/">Learn More</a>
           </div>
           <div className={styles.card}>
             <div>
-              <img
-                src={service}
-                alt="Proyecto 3"
-                className={styles.cardImage}
-              />
-              <h3>Service 3</h3>
+              <img src={service} alt="Service 3" className={styles.cardImage} />
+              <h3>Social media creator</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
             <a href="/">Learn More</a>
