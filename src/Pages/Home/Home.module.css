@@ -561,17 +561,24 @@
     max-width: 80%;
     font-size: medium;
   }
-  .cardImage {
-    height: 100px;
+  .card div img {
     width: 100px;
+    height: 100px;
   }
   .card h3 {
     font-size: 1.2rem;
   }
   .card {
-    height: auto;
     width: 90vw;
+    padding: 0;
+    margin: 0;
   }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .reviews h2 {
     font-size: 1.8rem;
   }
@@ -590,5 +597,8 @@
   }
   .contact p {
     font-size: 0.9rem;
+  }
+  .contact form textarea {
+    height: 50px;
   }
 }
