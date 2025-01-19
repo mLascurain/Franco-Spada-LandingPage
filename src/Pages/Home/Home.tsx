@@ -110,7 +110,7 @@ const Home: React.FC = () => {
               I help creators and brands grow their business through the power
               of social media. Let’s make something amazing together.
             </p>
-            <a href="#services">
+            <a href="#book">
               <button type="button" className={styles.button}>
                 Work with me
               </button>
@@ -169,7 +169,7 @@ const Home: React.FC = () => {
           </div>
         </div>
         <a href="https://calendly.com/franlspada" target="_blank">
-          <button type="button" className={styles.button}>
+          <button id="book" type="button" className={styles.button}>
             Book a Free Meeting
           </button>
         </a>
