@@ -63,7 +63,7 @@
   border-radius: 8px;
   border: 2px solid #e4e4e4;
   flex: 1;
-  box-shadow: 0 2px 8px rgba(80, 80, 80, 0.1);
+  box-shadow: 0 2px 8px rgba(80, 80, 80, 0.6);
   max-width: 300px;
   height: 550px;
   display: flex;
@@ -87,7 +87,7 @@
   height: 200px;
   object-fit: cover;
   border-radius: 8px;
-  box-shadow: rgba(71, 71, 71, 0.705) 0px 2px 8px;
+  box-shadow: rgba(8, 8, 8, 0.695) 0px 4px 12px;
   border: 2px solid #e4e4e4;
   transition: all 0.3s ease;
   border-radius: 50%;

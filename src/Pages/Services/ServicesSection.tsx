@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./ServicesSection.module.css";
-import serviceSocialMedia from "../../assets/social-media-marketing-concept-.jpg";
+import serviceSocialMedia from "../../assets/social-media.jpg";
 import serviceContentCreator from "../../assets/content.jpg";
 import serviceConsulting from "../../assets/consulta-financiera-isometrica-o-concepto-analisis-redes-sociales-comunicacion-consultoria-empresarial_589019-4599.jpg";
 
