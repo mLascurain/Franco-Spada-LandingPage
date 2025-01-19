@@ -53,16 +53,19 @@ const Home: React.FC = () => {
       handleNext();
     }, 6000);
 
-    // Limpiar el intervalo cuando el componente se desmonte
     return () => {
       clearInterval(interval);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <div className={styles.home}>
       <section id="home" className={styles.presentationContainer}>
         <div className={styles.presentation}>
+          <div className={styles.image}>
+            <img src={presentacion} alt="Foto de presentación" />
+          </div>
           <div className={styles.text}>
             <h1>Hello there, I'm Franco</h1>
             <p>
@@ -72,9 +75,6 @@ const Home: React.FC = () => {
             <button type="button" className={styles.button}>
               Work with me
             </button>
-          </div>
-          <div className={styles.image}>
-            <img src={presentacion} alt="Foto de presentación" />
           </div>
         </div>
       </section>
@@ -131,6 +131,15 @@ const Home: React.FC = () => {
           <button onClick={handleNext} className={styles.navButton}>
             &#8250;
           </button>
+          <div className={styles.arrowsResponsove}>
+            <button onClick={handlePrev} className={styles.navButtonRes}>
+              &#8249;
+            </button>
+
+            <button onClick={handleNext} className={styles.navButtonRes}>
+              &#8250;
+            </button>
+          </div>
         </div>
       </section>
 

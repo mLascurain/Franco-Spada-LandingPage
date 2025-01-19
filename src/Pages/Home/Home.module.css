@@ -15,6 +15,8 @@
   padding: 2rem;
   background-color: #f8f8f8;
   color: #2b2b2b;
+  flex-direction: row-reverse;
+  width: 100%;
 }
 
 .presentationContainer {
@@ -53,7 +55,7 @@
 }
 
 .presentation .image img {
-  width: 650px;
+  width: 35vw;
   border-radius: 8px;
   box-shadow: rgba(71, 71, 71, 0.705) 0px 2px 8px;
   border: 2px solid #e4e4e4;
@@ -84,6 +86,7 @@
   gap: 2rem;
   justify-content: center;
   margin-top: 1rem;
+  flex-wrap: wrap;
 }
 
 .projects .card {
@@ -115,7 +118,6 @@
 }
 
 .button {
-  padding: 0.5rem 1rem;
   background-color: transparent;
   color: #2b2b2b;
   outline: 2px solid #2b2b2b;
@@ -125,9 +127,14 @@
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.3s ease;
-  width: 350px;
+  width: 15vw;
   height: 60px;
   margin-top: 2rem;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding: 1rem 2rem;
+  min-width: 180px;
 }
 
 .button:hover {
@@ -153,7 +160,7 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  width: 800px;
+  width: 80vw;
   margin: 0 auto;
 }
 
@@ -171,7 +178,7 @@
 }
 
 .contact p {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   margin-bottom: 1rem;
 }
 
@@ -185,7 +192,7 @@
   border: 2px solid #d4d4d4;
   box-shadow: #d4d4d4 0px 2px 8px;
   border-radius: 4px;
-  width: 650px;
+  width: 45vw;
   transition: all 0.3s ease;
 }
 
@@ -194,7 +201,6 @@
   transform: translateY(-3px);
 }
 
-/* Carrusel */
 .reviews {
   padding: 2rem 0;
   background-color: #f8f8f8;
@@ -220,10 +226,12 @@
   justify-content: center;
   gap: 1rem;
   position: relative;
+  width: 80vw;
+  overflow-x: hidden;
 }
 
 .review {
-  width: 800px;
+  width: 60vw;
   background-color: #f8f8f8;
   padding: 1.5rem;
   text-align: center;
@@ -263,7 +271,6 @@
   transform: scale(1.1);
 }
 
-/* Animaciones */
 @keyframes fadeOutLeft {
   from {
     opacity: 1;
@@ -271,7 +278,7 @@
   }
   to {
     opacity: 0;
-    transform: translateX(-100%);
+    transform: translateX(-45%);
   }
 }
 
@@ -282,14 +289,14 @@
   }
   to {
     opacity: 0;
-    transform: translateX(100%);
+    transform: translateX(45vw);
   }
 }
 
 @keyframes fadeInLeft {
   from {
     opacity: 0;
-    transform: translateX(-100%);
+    transform: translateX(-45vw);
   }
   to {
     opacity: 1;
@@ -300,7 +307,7 @@
 @keyframes fadeInRight {
   from {
     opacity: 0;
-    transform: translateX(100%);
+    transform: translateX(0vw);
   }
   to {
     opacity: 1;
@@ -343,4 +350,142 @@
   border-radius: 2%;
   object-fit: cover;
   margin-bottom: 1rem;
+}
+
+.arrowsResponsive {
+  display: none;
+}
+
+.navButtonRes {
+  display: none;
+}
+
+.projects a {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 1230px) {
+  .presentation {
+    flex-direction: column;
+    align-items: center;
+    padding: 0%;
+    margin: 0%;
+  }
+
+  .presentation .text {
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 65vw;
+    text-align: center;
+  }
+
+  .presentation h1 {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+
+  .presentation .image img {
+    width: 120px;
+    height: auto;
+    border-radius: 50%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .presentation img {
+    width: 100px;
+    height: auto;
+    border-radius: 50%;
+  }
+
+  .presentationContainer {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0%;
+    margin: 0%;
+  }
+
+  .projects {
+    padding: 3rem;
+    height: auto;
+    width: 60vw;
+    margin: 2rem 0;
+  }
+
+  .projects .cards {
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .projects .card {
+    width: 80%;
+    margin: 1rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .presentation {
+    flex-direction: column;
+    align-items: center;
+    margin: 4rem;
+  }
+  .presentation .text {
+    max-width: 90vw;
+  }
+  .navButton {
+    display: none;
+  }
+  .reviews {
+    height: auto;
+    min-height: 100vh;
+  }
+  .carousel {
+    flex-direction: column;
+    height: auto;
+  }
+  .arrowsResponsove {
+    display: flex; /* Coloca los botones en una fila */
+    justify-content: center; /* Centra los botones horizontalmente */
+    align-items: center; /* Alinea verticalmente los botones */
+    gap: 10px; /* Espaciado entre los botones */
+  }
+
+  .navButtonRes {
+    flex: 0 1 auto; /* Asegura que los botones no se expandan más de lo necesario */
+    padding: 8px 16px; /* Ajusta el padding si es necesario */
+    font-size: 1rem; /* Ajusta el tamaño de fuente si quieres */
+    background: none;
+    border: none;
+    font-size: 4rem;
+    margin: 0 1.5rem;
+    cursor: pointer;
+    color: #2b2b2b;
+    transition: transform 0.2s ease;
+    display: flex;
+  }
+
+  .contact {
+    height: auto;
+    min-height: 75vh;
+  }
+
+  .contact form {
+    width: 90vw;
+  }
+
+  .contact form div {
+    width: 100%;
+  }
+
+  .contact form input,
+  .contact form textarea {
+    width: 80%;
+  }
+
+  .contact p {
+    width: 80%;
+  }
 }

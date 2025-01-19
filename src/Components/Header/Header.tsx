@@ -1,7 +1,13 @@
 import React from "react";
 import styles from "./Header.module.css";
+import { useState } from "react";
 
 const Header: React.FC = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen((prev) => !prev);
+  };
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
@@ -9,7 +15,11 @@ const Header: React.FC = () => {
           FRANCO <span>SPADA</span>
         </a>
       </div>
-      <nav className={styles.nav}>
+      <button className={styles.menuToggle} onClick={toggleMenu}>
+        {/* Ícono de menú hamburguesa */}
+        <span className={styles.hamburger}></span>
+      </button>
+      <nav className={`${styles.nav} ${menuOpen ? styles.open : ""}`}>
         <ul className={styles.navList}>
           <li className={styles.navItem}>
             <a href="#home" className={styles.navLink}>
