@@ -15,7 +15,7 @@ const PresentationSection: React.FC = () => {
             I help creators and brands grow their business through the power of
             social media. Let’s make something amazing together.
           </p>
-          <a href="#book">
+          <a href="#reviews">
             <button type="button" className={styles.button}>
               Work with me
             </button>
