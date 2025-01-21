@@ -6,3 +6,6 @@
 
 ![image](https://github.com/user-attachments/assets/b65153dd-4979-471c-952f-9e2cf45b6606)
 
+> [!NOTE]  
+> If you are looking for a similar job, do not hesitate to contact me!
+> matiaslascurain04@gmail.com
